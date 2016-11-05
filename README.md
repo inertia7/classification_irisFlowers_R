@@ -71,10 +71,15 @@ Which will give you an error (since R considers "\" as an escape code, the corre
 Once you have done this you can read the csv file which contains the S&P 500 closing values for which we did our analysis on, and you can proceed to the classification method done through R!
 
 ## <a name="Methodology"?></a>Methodology
-For our **Kth Nearest Neighbor** methodology, we went about using the **iris** data set, which is arguably the most used dataset with respect to statistical learning. In order to understand our procedure, it would be helpful to understand the properties we are using to predict using K-th Nearest Neighbor algorithm. 
+For this project we are using an algorithm known as **K-th Nearest Neighbor** or **k-NN**. We use this algorithm for classification, where we choose the **k closet** (using Euclidean distance)observations to predict our class set. We divide the data set into two components. 
+
+	- **Training Set** - This component is used to *train* the algorithm to discover predicitve relationships between the dependent variables and independent variable. In our example we used 75% of the data set (chosen randomly).
+	- **Test Set** - This component is what is left out of the algorithm and used to asses how well our **k-NN** performs on data it hasn't seen yet. In our case the rest of the data set, so the 25% that was not chosen to be in the **training set**   
+
+We went about using the **iris** data set, which is arguably the most used dataset with respect to statistical learning. In order to understand our procedure, it would be helpful to understand the properties we are using to predict using K-th Nearest Neighbor algorithm. 
 
 Here we have a picture referencing the **Sepal** and the **Petal**, within our dataset we are using the length and width of each component to try to predict the species of the **Iris** flower. 
 
 ![alt text](http://www.math.umd.edu/~petersd/666/html/iris_with_labels.jpg)
 
-In this data set there are three species; **Iris Setosa**. **Iris Virginica**, and **Iris Versicolor**
+In this data set there are three species; **Iris Setosa**. **Iris Virginica**, and **Iris Versicolor**. Our goal is to try to predict the species based on the given properties, this process is called **classification**. 
