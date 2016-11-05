@@ -2,17 +2,26 @@
 ## Knn Analysis of Iris Flowers with R
 (Project can be found at: http://www.inertia7.com/projects/iris-classification-r)
 
-# Abstract
+
+# Table of Contents
+* [Abstract](#Abstract)
+* [Contributors](#Contributors)
+* [Packages Required](#Packages-Required)
+* [Steps Required](#Steps-Required)
+* [Methodology](#Methodology)
+* [Sources Cited](#Sources-Cited)
+
+## <a name="Abstract"></a>Abstract
 This project focuses on the classification of iris flowers into their respective species by using the K-Nearest Neighbors machine-learning algorithm. The three species in this classification problem include setosa, versicolor, and virginica. The explanatory variables include sepal length, sepal width, pedal length, petal width. See sepal wiki. See petal wiki. We are essentially trying to predict the species of the iris flower based on physical features!
 
 The K-Nearest Neighbor algorithm is interesting because it is a simple yet powerful a machine learning method used for classification. It predicts based on majority votes, measuring a certain number of neighboring observation points (k) and classifies based on attribute prevalence using Euclidean distance.
 
-## Contributors 
+## <a name="Contributors"></a>Contributors 
 - Raul Eulogio
 - Kim Specht 
 - David A. Campos
 
-## Packages Required
+## <a name="Packages-Required"></a>Packages Required
 Here are the required packages which will ensure all the code will run properly. 
 
 	data.table
@@ -36,6 +45,36 @@ You will have now downloaded the package so within your script you run:
 
 This must be done before each **Rstudio** session, and written at the start of every script to ensure your code will be easily reproducible!
 
-## Steps Required
+## <a name="Steps-Required"></a>Steps Required
 If you would like to publish the plots you created through this project please refer to the **Forecasting the Stock Market** repository (found here: https://github.com/inertia7/timeSeries_sp500_R/blob/master/README.md#steps-required)
 
+### Create appropriate working directory
+Once the preliminary process of ensure your **Rstudio** has all parameters to ensure the code will run smoothly we suggest create an appropriate directory. For those using git we recommend using the  following line on a terminal:
+
+	git clone git@github.com:wH4teVr folder-name
+
+But if you are doing it manually you choose the "Clone or download" button and choose "Download ZIP". From here you must take note of where the file is downloaded, once you are able to find the file location you must set the appropriate working directory. 
+
+For this example we set the file into "/user/home/myProjects/classificationIris" so recall we have to set the working directory in **Rstudio** or you will receive errors especially when trying to read in the csv file. Therefore you run at the stop of your script:
+For linux:
+
+	setwd("/user/home/myProjects/classificationIris")
+
+For windows(Important when finding directorys you will have):
+
+	C:\home\myDocuments\myProjects\classificationIris
+
+Which will give you an error (since R considers "\" as an escape code, the correct form is:
+
+	setwd("C:/home/myDocuments/myProjects/classificationIris")
+
+Once you have done this you can read the csv file which contains the S&P 500 closing values for which we did our analysis on, and you can proceed to the classification method done through R!
+
+## <a name="Methodology"?></a>Methodology
+For our **Kth Nearest Neighbor** methodology, we went about using the **iris** data set, which is arguably the most used dataset with respect to statistical learning. In order to understand our procedure, it would be helpful to understand the properties we are using to predict using K-th Nearest Neighbor algorithm. 
+
+Here we have a picture referencing the **Sepal** and the **Petal**, within our dataset we are using the length and width of each component to try to predict the species of the **Iris** flower. 
+
+![alt text](http://www.math.umd.edu/~petersd/666/html/iris_with_labels.jpg)
+
+In this data set there are three species; **Iris Setosa**. **Iris Virginica**, and **Iris Versicolor**
