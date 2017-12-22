@@ -9,7 +9,6 @@
 # install.packages("caret")
 # install.packages("class")
 # install.packages("gridExtra")
-# install.packages("plotly")
 # install.packages("scales")
 # install.packages("GGally")
 # install.packages("RGraphics")
@@ -70,6 +69,7 @@ ggplotly(pairs) %>%
 
 # MODEL ESTIMATION
 # Creating training/test set 
+
 set.seed(123)
 samp.size <- floor(nrow(iris) * .75)
 samp.size
