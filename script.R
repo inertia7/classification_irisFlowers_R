@@ -21,6 +21,7 @@ library(ggfortify)
 library(caret)
 library(class)
 library(gridExtra)
+library(plotly)
 library(scales)
 library(GGally)
 library(RGraphics)
@@ -66,8 +67,9 @@ pairs
 ggplotly(pairs) %>%
   layout(showlegend = FALSE)
 
- # MODEL ESTIMATION
- # Creating training/test set 
+# MODEL ESTIMATION
+# Creating training/test set 
+
 set.seed(123)
 samp.size <- floor(nrow(iris) * .75)
 samp.size
@@ -112,7 +114,7 @@ table(test.class, knn.iris)
 knn.iris
 
 CrossTable(x = test.class, y = knn.iris, prop.chisq=FALSE)
- 
+
 # WE CAN ESTIMATE OUR TEST ERROR RATE AS FOLLOWS FROM OUR TABLE:
 # > table(test.class, knn.iris)
 # knn.iris
